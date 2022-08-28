@@ -32,11 +32,11 @@ class Movie < ActiveRecord::Base
         Movie.update(:all, title: new_title)
     end
 
-    def self.delete_by_id (id)
-        Movie.destroy_by(id)
+    def delete_by_id (id)
+        self.class.destroy_by(id)
     end
 
-    
+
     def self.delete_all_movies 
         Movie.destroy_all
     end
